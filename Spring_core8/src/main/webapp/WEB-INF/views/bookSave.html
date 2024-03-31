@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
+  <title>Book save!</title>
+</head>
+<body>
+<form action="#" th:action="@{/books/getBookAddPage}" method="post" th:object="${bookAdd}">
+
+  <input type="text" name="bookAuthor" th:field="*{bookAuthor}">
+  <br>
+  <input type="text" name="price" th:field="*{price}">
+  <br>
+  <br>
+  <button type="submit">Save</button>
+  <br>
+</form>
+</body>
+</html>
+

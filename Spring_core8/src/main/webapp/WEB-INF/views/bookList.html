@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
+    <title>Book list page!!!</title>
+</head>
+<body>
+<a th:href="@{/book/getBookAddPage}">Add book</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Book author</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="book:${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.bookAuthor}"></td>
+        <td th:text="${book.price}"></td>
+        <td>
+            <a th:href="@{/books/edit/{id}(id=${book.id})}">Update</a>
+            <a th:href="@{/book/{id}(id=${book.id})}">Delete</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
